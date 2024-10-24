@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
@@ -6,12 +6,10 @@ import { Menu, X } from "lucide-react";
 export default function Header() {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-  const sectionRefs = useRef({});
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
 
-    // Use IntersectionObserver to detect which section is in view
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +21,7 @@ export default function Header() {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5, // Trigger when 50% of the section is visible
+        threshold: 0.5,
       }
     );
 

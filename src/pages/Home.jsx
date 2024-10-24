@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Book,
@@ -14,63 +13,33 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main>
-      <section id="home" className="py-20 relative">
-        {/* <img
+      <section
+        id="home"
+        className="py-20 relative min-h-[calc(100vh-60px)] flex items-center"
+      >
+        <img
           src="/banner.jpg"
           alt="Banner Image"
           className="absolute h-full w-full object-cover inset-0 z-0 overflow-hidden"
-        /> */}
+        />
         <div className="absolute h-full w-full object-cover inset-0 z-0 overflow-hidden dotted-bg opacity-20"></div>
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="md:w-1/2 mb-10 md:mb-0"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-                Trusted And Professional
-                <br />
-                Education Provider
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Empowering futures through quality education
-              </p>
-              <Button size="lg">Get Started</Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="md:w-1/2 flex justify-center"
-            >
-              <div className="grid grid-cols-1 gap-6">
-                <div className="bg-background p-4 rounded-lg shadow-lg">
-                  <img
-                    src="/zakaria.webp"
-                    alt="Zakaria"
-                    className="w-36 h-36 object-cover rounded-lg mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-foreground">
-                    Zakaria
-                  </h3>
-                  <p className="text-primary">Program Director</p>
-                </div>
-                <div className="bg-background p-4 rounded-lg shadow-lg">
-                  <img
-                    src="/tehreem.webp"
-                    alt="Tehreem"
-                    className="w-36 h-36 object-cover rounded-lg mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-foreground">
-                    Tehreem
-                  </h3>
-                  <p className="text-primary">Q.A Director</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        <div className="container mx-auto px-6 h-full">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="md:w-1/2 mb-10 md:mb-0 text-white"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+              Trusted And Professional
+              <br />
+              Education Provider
+            </h1>
+            <p className="text-xl mb-8">
+              Empowering futures through quality education
+            </p>
+            <Button size="lg">Get Started</Button>
+          </motion.div>
         </div>
       </section>
 
@@ -109,7 +78,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-primary/5 rounded hover:shadow-lg transition-shadow overflow-hidden"
               >
-                {/* Service Image */}
                 <img
                   src={service.image}
                   alt={service.title}
@@ -120,12 +88,10 @@ export default function Home() {
                   {/* Service Icon */}
                   {/* <service.icon className="w-12 h-12 text-primary mb-4" /> */}
 
-                  {/* Service Title */}
                   <h3 className="text-xl font-semibold text-foreground mb-2">
                     {service.title}
                   </h3>
 
-                  {/* Service Description */}
                   <p className="text-muted-foreground">
                     Comprehensive programs designed to enhance your skills and
                     knowledge.
@@ -137,17 +103,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about-us" className="py-12">
-        <div className="bg-primary/5">
+      <section id="about-us" className="">
+        <div className="bg-primary/5 py-12">
           <div className="container mx-auto px-6">
-            {/* Left Side: Text Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="grid grid-cols-1 md:grid-cols-2 items-center"
             >
-              <div className="py-8">
+              <div className="py-8 max-w-xl mx-auto">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
                   About Us
                 </h2>
@@ -159,12 +124,29 @@ export default function Home() {
                   succeed in today's competitive world.
                 </p>
               </div>
-              <div className="flex justify-center">
-                <img
-                  src="/about2.png" // Replace with your image path
-                  alt="About Us"
-                  className="object-cover h-full max-w-72"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 m-auto">
+                <div className="bg-background p-4 rounded-lg shadow-lg">
+                  <img
+                    src="/zakaria.webp"
+                    alt="Zakaria Qadir"
+                    className="w-48 h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Zakria Qadir
+                  </h3>
+                  <p className="text-primary">Program Director</p>
+                </div>
+                <div className="bg-background p-4 rounded-lg shadow-lg">
+                  <img
+                    src="/tehreem.webp"
+                    alt="Tehreem Ashfaq"
+                    className="w-48 h-48 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Tehreem Ashfaq
+                  </h3>
+                  <p className="text-primary">Q.A Director</p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -181,7 +163,7 @@ export default function Home() {
               {
                 icon: Mail,
                 title: "Email",
-                content: "qadirzakaria@gmail.com",
+                content: "qadirzakria930@gmail.com",
               },
               { icon: Phone, title: "Phone", content: "0435599266" },
               {
