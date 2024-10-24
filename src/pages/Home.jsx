@@ -14,7 +14,13 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <main>
-      <section id="home" className="py-20">
+      <section id="home" className="py-20 relative">
+        {/* <img
+          src="/banner.jpg"
+          alt="Banner Image"
+          className="absolute h-full w-full object-cover inset-0 z-0 overflow-hidden"
+        /> */}
+        <div className="absolute h-full w-full object-cover inset-0 z-0 overflow-hidden dotted-bg opacity-20"></div>
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <motion.div
@@ -24,9 +30,7 @@ export default function Home() {
               className="md:w-1/2 mb-10 md:mb-0"
             >
               <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-                Trusted And
-                <br />
-                Professional
+                Trusted And Professional
                 <br />
                 Education Provider
               </h1>
@@ -42,9 +46,9 @@ export default function Home() {
               className="md:w-1/2 flex justify-center"
             >
               <div className="grid grid-cols-1 gap-6">
-                <div className="bg-background p-6 rounded-lg shadow-lg">
+                <div className="bg-background p-4 rounded-lg shadow-lg">
                   <img
-                    src="/placeholder.svg?height=150&width=150"
+                    src="/zakaria.webp"
                     alt="Zakaria"
                     className="w-36 h-36 object-cover rounded-lg mb-4"
                   />
@@ -53,9 +57,9 @@ export default function Home() {
                   </h3>
                   <p className="text-primary">Program Director</p>
                 </div>
-                <div className="bg-background p-6 rounded-lg shadow-lg">
+                <div className="bg-background p-4 rounded-lg shadow-lg">
                   <img
-                    src="/placeholder.svg?height=150&width=150"
+                    src="/tehreem.webp"
                     alt="Tehreem"
                     className="w-36 h-36 object-cover rounded-lg mb-4"
                   />
@@ -77,51 +81,93 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Short Term Courses", icon: Book },
-              { title: "Graduate Courses", icon: GraduationCap },
-              { title: "Diploma Courses", icon: Award },
-              { title: "Certification Courses", icon: FileCheck },
+              {
+                title: "Short Term Courses",
+                icon: Book,
+                image: "/services/short.webp",
+              },
+              {
+                title: "Graduate Courses",
+                icon: GraduationCap,
+                image: "/services/graduate.webp",
+              },
+              {
+                title: "Diploma Courses",
+                icon: Award,
+                image: "/services/diploma.webp",
+              },
+              {
+                title: "Certification Courses",
+                icon: FileCheck,
+                image: "/services/certificate.webp",
+              },
             ].map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="bg-primary/5 rounded hover:shadow-lg transition-shadow overflow-hidden"
               >
-                <service.icon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  Comprehensive programs designed to enhance your skills and
-                  knowledge.
-                </p>
+                {/* Service Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full aspect-square object-cover"
+                />
+
+                <div className=" p-6">
+                  {/* Service Icon */}
+                  {/* <service.icon className="w-12 h-12 text-primary mb-4" /> */}
+
+                  {/* Service Title */}
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {service.title}
+                  </h3>
+
+                  {/* Service Description */}
+                  <p className="text-muted-foreground">
+                    Comprehensive programs designed to enhance your skills and
+                    knowledge.
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about-us" className="py-20 bg-primary/5">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-background p-8 rounded-lg shadow-lg"
-          >
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              About Us
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Welcome to TZ Education Provider, where we believe in empowering
-              individuals through knowledge and skill development. Our mission
-              is to offer high-quality, accessible education that equips
-              learners with the tools they need to succeed in today's
-              competitive world.
-            </p>
-          </motion.div>
+      <section id="about-us" className="py-12">
+        <div className="bg-primary/5">
+          <div className="container mx-auto px-6">
+            {/* Left Side: Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 items-center"
+            >
+              <div className="py-8">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
+                  About Us
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Welcome to TZ Education Provider, where we believe in
+                  empowering individuals through knowledge and skill
+                  development. Our mission is to offer high-quality, accessible
+                  education that equips learners with the tools they need to
+                  succeed in today's competitive world.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/about2.png" // Replace with your image path
+                  alt="About Us"
+                  className="object-cover h-full max-w-72"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -149,7 +195,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="bg-primary/5 p-6 rounded hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center mb-4">
                   <item.icon className="w-6 h-6 text-primary mr-2" />
