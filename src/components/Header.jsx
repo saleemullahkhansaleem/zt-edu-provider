@@ -39,10 +39,13 @@ export default function Header({ setDarkMode, darkMode }) {
     <nav className="sticky top-0 z-30 bg-background bg-opacity-90 backdrop-blur-md shadow-md">
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold flex items-center gap-2">
+          <a
+            href="#home"
+            className="text-base sm:text-xl font-bold flex items-center gap-2 truncate"
+          >
             <FaGraduationCap size={36} className="text-primary" /> TZ Education
             Provider
-          </div>
+          </a>
           <div className="hidden md:flex space-x-6">
             {["Home", "Services", "About Us", "Contact Us"].map((item) => (
               <a
@@ -55,9 +58,6 @@ export default function Header({ setDarkMode, darkMode }) {
                 }`}
               >
                 {item}
-                {/* {activeSection === item.toLowerCase().replace(" ", "-") && (
-                  <span className="absolute -bottom-4 w-0 h-0 border-[16px] border-transparent border-b-foreground mx-auto"></span>
-                )} */}
               </a>
             ))}
           </div>
