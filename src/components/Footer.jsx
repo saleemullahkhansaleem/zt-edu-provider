@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground/90 text-background pt-8">
+    <footer className="bg-black/90 text-background pt-8 text-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-6 md:mb-0">
@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className=" mt-8 bg-foreground">
+      <div className=" mt-8 bg-black border-t border-foreground">
         <div className="container mx-auto px-6 flex justify-between text-sm py-2">
           <div className="text-left">
             © {new Date().getFullYear()} TZ Education Provider. All rights

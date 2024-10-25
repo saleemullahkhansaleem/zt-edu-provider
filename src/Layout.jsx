@@ -14,14 +14,14 @@ export default function Layout() {
   }, [darkMode]);
 
   return (
-    <main
-      className={`max-w-[100vw] overflow-x-hidden dark:text-white max-h-screen overflow-y-auto ${
+    <div
+      className={`max-w-[100vw] overflow-x-hidden text-foreground bg-background max-h-screen overflow-y-auto scroll-smooth ${
         darkMode ? "dark" : ""
       }`}
     >
       <Header setDarkMode={setDarkMode} darkMode={darkMode} />
       <Outlet />
       <Footer />
-    </main>
+    </div>
   );
 }
