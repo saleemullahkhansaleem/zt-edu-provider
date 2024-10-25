@@ -18,7 +18,7 @@ export default function Home() {
         className="py-20 relative min-h-[calc(100vh-60px)] flex items-center"
       >
         <img
-          src="/banner.jpg"
+          src="/banner.webp"
           alt="Banner Image"
           className="absolute h-full w-full object-cover inset-0 z-0 overflow-hidden"
         />
