@@ -15,18 +15,21 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <Link
-            className="bg-white rounded p-4"
-            to="https://asic.gov.au/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/asic-logo.svg"
-              alt="ASIC Logo"
-              className="h-16 object-contain"
-            />
-          </Link>
+          <div className="bg-white text-black rounded p-4 text-center">
+            <Link
+              to="https://asic.gov.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/asic-logo.svg"
+                alt="ASIC Logo"
+                className="h-16 object-contain"
+              />
+            </Link>
+            <p className="text-lg font-bold text-primary">TZ EDUCATION PROVIDER PTY LTD</p>
+            <p className="">Australian Company Number 676 236 981</p>
+          </div>
         </div>
       </div>
       <div className=" mt-8 bg-black border-t border-foreground">

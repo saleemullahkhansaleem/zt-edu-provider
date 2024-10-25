@@ -129,7 +129,7 @@ export default function Home() {
                   <img
                     src="/zakaria.webp"
                     alt="Zakaria Qadir"
-                    className="w-48 h-48 object-cover rounded-lg mb-4"
+                    className="w-48 h-48 object-cover rounded-full mb-4"
                   />
                   <h3 className="text-xl font-semibold text-foreground">
                     Zakria Qadir
@@ -140,7 +140,7 @@ export default function Home() {
                   <img
                     src="/tehreem.webp"
                     alt="Tehreem Ashfaq"
-                    className="w-48 h-48 object-cover rounded-lg mb-4"
+                    className="w-48 h-48 object-cover rounded-full mb-4"
                   />
                   <h3 className="text-xl font-semibold text-foreground">
                     Tehreem Ashfaq
