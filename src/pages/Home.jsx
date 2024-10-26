@@ -145,7 +145,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-foreground">
                     Tehreem Ashfaq
                   </h3>
-                  <p className="text-primary">Q.A Director</p>
+                  <p className="text-primary">Chief Technology Officer</p>
                 </div>
               </div>
             </motion.div>
